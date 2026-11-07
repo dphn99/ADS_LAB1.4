@@ -1,16 +1,14 @@
 package structures;
 
-import models.Student;
+class Node<T> {
+    final T data;
+    Node<T> next;
 
-class Node {
-    final Student data;
-    Node next;
-
-    Node(Student data) {
+    Node(T data) {
         this.data = data;
     }
     
-    void setNext(Node node) {
+    void setNext(Node<T> node) {
         next = node;
     }
 }

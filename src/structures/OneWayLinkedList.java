@@ -1,22 +1,26 @@
 package structures;
 
-import models.Student;
+public class OneWayLinkedList<T> {
+    private Node<T> head;
+    private Node<T> tail;
+    private int size;
 
-public class OneWayLinkedList {
-    private Node head;
-    private Node tail;
+    public void add(T data) {
+        Node<T> node = new Node<>(data);
 
-    public void add(Student student) {
-        Node node = new Node(student);
-        
         if (head == null) {
             head = node;
             tail = node;
-            return;
+        } else {
+            tail.setNext(node);
+            tail = node;
         }
         
-        tail.setNext(node);
-        tail = node;
+        size++;
+    }
+    
+    public int size() {
+        return size;
     }
 
 }
